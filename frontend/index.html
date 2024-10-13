@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Proyecto Módulos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Foros de Discusión</h1>
+        
+        <div id="foros" class="box"></div>
+        
+        <form id="foroForm" onsubmit="return crearForo(event)" class="box">
+            <h2>Crear Nuevo Foro</h2>
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <input type="text" name="tematica" placeholder="Temática" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <input type="text" name="imagenURL" placeholder="URL de Imagen" />
+            <button type="submit">Crear Foro</button>
+        </form>
+
+        <h2>Agenda de Gastos</h2>
+        <div id="gastos" class="box">
+            <table id="gastosTabla">
+                <thead>
+                    <tr>
+                        <th>Nombre del Gasto</th>
+                        <th>Fecha</th>
+                        <th>Cantidad</th>
+                        <th>Total Gastado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="gastosLista"></tbody>
+            </table>
+            <h3 id="totalGastos">Total Gastado: $0</h3>
+        </div>
+        <form id="gastoForm" onsubmit="return agregarGasto(event)" class="box">
+            <input type="text" name="nombreGasto" placeholder="Nombre del Gasto" required />
+            <input type="date" name="fechaGasto" required />
+            <input type="number" name="cantidad" placeholder="Cantidad" required />
+            <input type="number" name="totalGastado" placeholder="Total Gastado" required />
+            <button type="submit">Agregar Gasto</button>
+        </form>
+
+        <h2>Agregar Comentario</h2>
+        <div id="comentarios" class="box"></div>
+        <form id="comentarioForm" onsubmit="return agregarComentario(event)" class="box">
+            <input type="text" name="usuario" placeholder="Usuario" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Agregar Comentario</button>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
